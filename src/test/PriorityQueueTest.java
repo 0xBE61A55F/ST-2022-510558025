@@ -13,7 +13,7 @@ public class PriorityQueueTest {
     static Stream<Arguments> streamProvider(){
         //  return stream
         return Stream.of(
-                arguments(new int[]{3,0,6,4},new int[] {0,1,4,6}),
+                arguments(new int[]{3,0,6,4},new int[] {0,3,4,6}),
                 arguments(new int[]{9,5,2,7},new int[] {2,5,7,9}),
                 arguments(new int[]{5,2,7,8},new int[] {2,5,7,8}),
                 arguments(new int[]{0,5,8,7},new int[] {0,5,7,8}),
@@ -49,7 +49,7 @@ public class PriorityQueueTest {
 
     @Test
     public void OfferTest(){
-        Exception exception = assertThrows(IllegalArgumentException.class, () ->{
+        Exception exception = assertThrows(NullPointerException.class, () ->{
             new PriorityQueue().offer(null);
         });
     }
