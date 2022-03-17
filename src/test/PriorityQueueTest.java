@@ -49,7 +49,7 @@ public class PriorityQueueTest {
 
     @Test
     public void OfferTest(){
-        Exception exception = assertThrows(NullPointerException.class, () ->{
+        Exception exception = assertThrows(IllegalArgumentException.class, () ->{
             new PriorityQueue().offer(null);
         });
     }
